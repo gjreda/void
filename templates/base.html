@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  {% block header %}{% endblock %}
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="google-site-verification" content="AgIAQN_qsniIQWOq659Bnhzx-LZts2FdgP1kLgtQg-k" />
+
+  <title>{% block title %}{% endblock %}</title>
+
+	<meta name="description" content="{% block metadesc %}{% endblock %}">
+	<meta name="author" content="{{ AUTHOR }}">
+  <meta name="copyright" content="&copy; Copyright Greg Reda, 2013 to Present">
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  {% if FEED_ALL_ATOM %}
+  <!-- Feeds
+  ================================================== -->
+  <link rel="alternate" type="application/atom+xml" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" title="{{ SITENAME }} Full Atom Feed">
+  {% endif %}
+
+	<!-- Facebook Open Graph
+  ================================================== -->
+  <meta property="og:title" content="{{ TITLE }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ SITEURL }}">
+  <meta property="og:image" content="{{ AVATAR }}">
+  <meta property="og:description" content="{{ DESCRIPTION }}">
+
+  <!-- Twitter Cards
+  ================================================== -->
+  {% if TWITTER_CARDS %}
+  {% block twittercards %}{% endblock %}
+  {% endif %}
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="/theme/css/base.css">
+	<link rel="stylesheet" href="/theme/css/skeleton.css">
+	<link rel="stylesheet" href="/theme/css/layout.css">
+	<link rel="stylesheet" href="/theme/css/void.css">
+	<link rel="stylesheet" href="/theme/css/pygment.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- JavaScript
+	=================================================== -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript"
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  {% if article %}
+    {% if article.styles %}
+  <!-- Pelican Dynamic - for embedding D3 charts
+  =================================================== -->
+        {% for style in article.styles %}
+  {{ style }}
+          {% endfor %}
+      {% endif %}
+  {% endif %}
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/theme/images/favicon.ico">
+	<link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+	<!-- Primary Page Layout
+	================================================== -->
+	<div class="container">
+    {% include 'navbar.html' %}
+		<section id="content" class="twelve columns">
+			{% block content %}{% endblock %}
+		</section>
+		{% include 'footer.html' %}
+	</div><!-- container -->
+
+	{% include "analytics.html" %}
+
+  <script type="text/javascript">
+    $("a").on('click', function(e) {
+      var url = $(this).attr("href");
+      console.log(url);
+      if (e.currentTarget.host != window.location.host) {
+        _gaq.push(['_trackEvent', 'Outbound Links', e.currentTarget.host, url, 0]);
+        if (e.metaKey || e.ctrlKey) {
+          var newtab = true;
+        }
+        if (!newtab) {
+          e.preventDefault();
+          setTimeout('document.location = "' + url + '"', 100);
+        }
+      }
+    });
+  </script>
+</body> <!-- End body -->
+
+{% if TWITTER_NAME or TWITTER_CARDS %}
+<!-- twitter.js
+==================================================================== -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>  
+{% endif %}
+
+
+{% if article %}
+    {% if article.scripts %}
+<!-- Pelican Dynamic - for embedding D3 charts
+=================================================== -->
+        {% for script in article.scripts %}
+{{ script }}
+        {% endfor %}
+    {% endif %}
+{% endif %}
+</html>

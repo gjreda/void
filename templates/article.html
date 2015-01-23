@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block metadesc %}{{ article.description|e }}{% endblock %}
+{% block affiliate %}{{ article.affiliate_link|safe }}{% endblock %}
+
+{% block header %}
+<!-- Extra Header for IPython Notebooks
+================================================== -->
+  {% if EXTRA_HEADER %}
+    {{ EXTRA_HEADER }}
+  {% endif %}
+  <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:500px;}
+    /*
+      Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file.
+     */
+  </style>
+{% endblock %}
+
+{% block twittercards %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ TWITTER_NAME }}">
+  <meta name="twitter:creator" content="@{{ TWITTER_NAME }}">
+  <meta name="twitter:domain" content="{{ DOMAIN }}">
+  <meta name="twitter:image" content="{{ SITEURL }}{{ AVATAR }}">
+  <meta name="twitter:title" content="{{ article.title }}">
+  <meta name="twitter:description" content="{{ article.description|e }}">
+{% endblock %}
+
+{% block content %}
+
+  <!-- Article Headers
+  ================================================================== -->
+  <h1 class="article-title"><a href="/{{ article.url }}" title="Permalink to {{ article.title }}">{{article.title}}</a></h1>
+  <h5 class="article-date">{{ article.date|strftime('%B %d, %Y') }}
+    {% if article.tags %} | Tags: {% for tag in article.tags %}
+        <a class="tag" href="/{{ tag.url }}" rel="tag" title="Posts tagged with {{ article.tag }}">{{ tag }}</a>
+      {% endfor %}
+    {% endif %}
+  </h5>
+  <hr class="small"></hr>
+
+  <!-- Article Content
+  ================================================================== -->
+  <div class="article-content">
+    {{ article.content }}
+  </div>
+
+  <div class="article-sharing">
+    <hr class="small"></hr>
+    {% if GITTIP_NAME %}
+    <!-- Gittip
+    ================================================================== -->
+    <script data-gittip-username="{{ GITTIP_NAME }}" data-gittip-widget="button" src="//gttp.co/v1.js"></script>
+    {% endif %}
+
+    {% if TWITTER_NAME %}
+    <!-- Twitter Sharing
+    ================================================================== -->
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ TWITTER_NAME }}">Tweet</a>
+    {% endif %}
+
+    {% if MAILCHIMP %}
+    {% include 'mailchimp.html' %}
+    {% endif %}
+
+    <!-- Back to home
+    ================================================================== -->
+    <div class="back-to-home">
+      <a href="/">← Back to Home</a>
+    </div>
+    <hr class="small"></hr>
+
+    {% if GOOGLE_ADSENSE %}
+    <!-- Google Adsense
+    ================================================================== -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6902842942781750"
+     data-ad-slot="3985764022"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <hr class="small">
+    {% endif %}
+
+    {% if DISQUS_SITENAME %}
+    <!-- Disqus Comments
+    ================================================================== -->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          var disqus_shortname = {{ DISQUS_SITENAME }};
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    {% endif %}
+  </div>
+{% endblock %}

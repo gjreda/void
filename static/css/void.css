@@ -1,0 +1,282 @@
+/*
+* Author: Greg Reda
+* Date: 2015-01-22
+* MIT License
+* Based off of a pelican theme I previously wrote ...
+* meaning I'm procrastinating on cleaning all this up.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+{margin: 0; padding: 0;}
+html, body {
+	height: 100%;
+	color: #2E2E2E !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Droid Serif", serif;
+	margin-top: 20px;
+}
+h1 { font-size: 28px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+.container {
+	min-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer {
+	text-align: center;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+#content {
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 90%;
+}
+
+
+/* Navbar
+**************************************/
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.navbar {
+	display: block;
+	background-color: #fff;
+	/*min-height: 50px;*/
+	/*line-height: 50px;  vertically center text within navbar */
+	width: 100%;
+	border-bottom: 1px solid #eee;
+}
+.navbar ul { margin: 0 0 0 0 !important; }
+.navbar ul li {
+	display: inline;
+	/*line-height: 50px;*/
+}
+.navbar a {
+	font-weight: bold;
+}
+
+#logo {
+	height: 35px;
+	border: 1px solid #555;
+	float: left;
+	line-height: 50px;
+	margin-top: 7px;
+/* ^^^^^
+Because vertically centering things with CSS is a fucking nightmare,
+I'm going to do this the shitty hack way and just specify a margin-top.
+7px = ( .navbar:height - img:height ) / 2 ...
+and I'm rounding down because it looked better.
+
+If someone sees this comment and knows the right way to do it,
+please email me.
+*/
+}
+.navbar-brand { float: left; }
+.navbar-brand h1 {
+	letter-spacing: -2px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: left;
+}
+.navbar-brand .icon {
+	line-height: 50px;
+}
+
+.navbar-links {
+	float: right;
+	padding-right: 20px;
+}
+.navbar-links ul { text-align: right; }
+.navbar-links ul li {
+  margin: 0 0 0 20px;
+  line-height: 50px;
+}
+.navbar-links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Droid Sans', sans-serif;
+	font-size: 1.1rem;
+	line-height: 2rem;
+}
+
+/* Links
+**************************************/
+a, a:visited {
+	text-decoration: none !important;
+	font-weight: bold;
+}
+
+a.icon, a:visited.icon, a:active.icon {
+	font-size: 17px;
+	color: #555;
+	font-weight: bold;
+}
+a:hover.icon, a:focus.icon { color: #222; }
+
+
+/* Horizontal Rulers
+**************************************/
+hr.large {
+	border: none;
+	height: 2px;
+	background-color: #ebebeb;
+	margin: 10px 10px;
+}
+
+hr.small {
+	margin: 5px 0px;
+}
+
+
+/* Article Design
+**************************************/
+.article-title {
+	clear: both;
+	margin-top: 0px !important;
+}
+
+h1.article-title {
+	line-height: normal;
+}
+
+.article-date {
+	font-style: italic;
+	margin: 8px 0px 8px;
+}
+
+.article-tags {  }
+.article-summary { clear: both; }
+.article-content { clear: both; overflow: hidden; }
+.article-content img { border: 1px solid #222; }
+
+.article-content p {
+	margin: 12px 0px 12px 0px !important;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: 400;
+	line-height: 1.4em;
+	font-size: 18px;
+}
+
+.article-sharing {
+	margin: 0 auto;
+}
+
+.caption { font-size: 12px !important; }
+
+blockquote {
+	padding: 0px 20px 0px 20px !important;
+	border-left: 2px solid #ddd !important;
+}
+
+.back-to-home {
+	margin-bottom: 10px;
+}
+
+.center { text-align: center; }
+
+
+/* Mailchimp
+**************************************/
+#mc_embed_signup {
+	background: #fff;
+	clear: left;
+	width: 650px;
+}
+
+#mc_embed_signup input.button { visibility: visible !important; }
+
+
+/* Code Formatting
+**************************************/
+code, pre.ipynb {
+	font-family: "Source Code Pro", monospace !important;
+	font-size: 13px !important;
+}
+
+.highlight, pre {
+	font-family: "Source Code Pro", monospace !important;
+	font-size: 12px;
+	background-color: #272822;
+	line-height: 125%;
+	padding: 5px 10px 5px 10px;
+	border-radius: 4px;
+}
+
+/*.text_cell_render { color: #2E2E2E !important; } Override IPyNB style*/
+div.output_stream pre {	font-size: 12px !important; }
+
+
+/* Mobile
+**************************************/
+@media only screen and (max-width: 769px) {
+	nav { position: relative; }
+	.navbar ul li { line-height: 0; }
+
+	.navbar-brand {
+		float: none;
+	}
+	#logo { float: none; }
+	.navbar-brand h1 {
+		float: none;
+		margin: 0 0 0 0;
+	}
+	.navbar-brand ul { text-align: center; }
+
+	.navbar-links {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 0 0 0;
+	}
+	.navbar-links ul { text-align: center; }
+	.navbar-links ul li { margin: 5px 10px 0 10px; }
+
+  #content {
+    float: none;
+    margin-top: auto;
+  }
+
+  #content img {
+		max-width: 85%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.article-title {
+		text-align: center;
+		float: none !important;
+	}
+
+	.article-date {
+		text-align: center;
+		float: none !important;
+	}
+
+	#mc_embed_signup { width: 100%; }
+	#mc_embed_signup input.button { width: 50%; }
+}

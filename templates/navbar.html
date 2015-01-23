@@ -1,0 +1,61 @@
+<!-- Navigation
+================================================== -->
+<nav class="navbar">
+  <div class="navbar-brand six columns"> <!-- Yes, I know this is a douchey class name -->
+      <ul>
+        <li>
+          <a href="/" title="Home"><img id="logo" src="/theme/images/avatar.jpg" alt="Me (Greg Reda, GrubHub-ified)"></a>
+        </li>
+        <li>
+          <h1><a href="/" title="Home">{{ SITENAME }}</a></h1>
+        </li>
+      </ul>
+      <ul id="social-icons">
+        <li>
+          <a class="icon" href="https://twitter.com/{{ TWITTER_NAME }}" title="Twitter">
+            <i class="fa fa-fw fa-twitter"></i>
+          </a>
+          </li>
+        <li>
+          <a class="icon" href="https://github.com/{{ GITHUB_NAME }}" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="{{ LINKEDIN_URL }}" title="LinkedIn">
+            <i class="fa fa-fw fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="{{ GOOGLE_PLUS_URL }}" title="Google+">
+            <i class="fa fa-fw fa-google-plus"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="https://last.fm/user/{{ LASTFM_NAME }}" title="LastFM">
+            <i class="fa fa-fw fa-music"></i>
+          </a>
+        </li>
+        {% if EMAIL_ADDRESS %}
+        <li>
+          <a class="icon" href="mailto:{{ EMAIL_ADDRESS }}?subject=Hi" title="E-Mail">
+            <i class="fa fa-fw fa-envelope"></i>
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a class="icon" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" title="Subscribe (Atom)">
+            <i class="fa fa-fw fa-rss"></i>
+          </a>
+        </li>
+      </ul> <!-- End social-icons ul -->
+    </div> <!-- End navbar-brand -->
+
+  <div class="navbar-links">
+      <ul>
+        <li><a href="/about">About</a></li>
+        <!-- <li><a href="/work">Work</a></li> -->
+        <!-- <li><a href="/hire">Consulting</a></li> -->
+      </ul> <!-- End navbar-links ul -->
+    </div> <!-- End navbar-links -->
+</nav> <!-- End navbar -->

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+{% block metadesc %}{{ page.description|e }}{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block twittercards %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ TWITTER_NAME }}">
+  <meta name="twitter:creator" content="@{{ TWITTER_NAME }}">
+  <meta name="twitter:domain" content="{{ DOMAIN }}">
+  <meta name="twitter:image" content="{{ SITEURL }}{{ AVATAR }}">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description|e }}">
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="article-title"><a href="/{{ page.url }}" title="Permalink to {{ page.title }}">{{page.title}}</a></h1>
+
+  <div class="article-content">
+    {{ page.content }}
+  </div>
+    {{ ARTICLE_FOOTER }}
+
+  <!-- Twitter buttons -->
+  <a href="https://twitter.com/{{ TWITTER_NAME }}" class="twitter-follow-button" data-show-count="false">Follow @{{ TWITTER_NAME }}</a>
+
+  <div class="back-to-home"><a href="/">← Back to Home</a></div>
+  <hr class="large">
+
+<!-- twitter.js -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% endblock %}
