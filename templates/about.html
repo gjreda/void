@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+{% block metadesc %}{{ page.description|e }}{% endblock %}
+
+{% block header %}
+<style>
+  img.round {
+    border: 2px solid #222;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<img class="round" src="/images/headshot.jpg" alt="{{ SITENAME }}">
+
+<h1 class="article-title">{{ ABOUT_PAGE_HEADER }}</h1> 
+  <div class="article-content">
+    {{ page.content }}
+  </div>
+  <hr class="large">
+{% endblock %}
