@@ -20,6 +20,17 @@
 {% endblock %}
 
 {% block twittercards %}
+	<!-- Facebook Open Graph
+  ================================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ article.title }}">
+  <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
+  <meta property="og:description" content="{{ article.description|e }}">
+  <meta property="og:site_name" content="{{ SITENAME }}">
+  <meta property="og:image" content="{{ SITEURL }}{{ AVATAR }}">
+
+  <!-- Twitter Cards
+  ================================================== -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@{{ TWITTER_NAME }}">
   <meta name="twitter:creator" content="@{{ TWITTER_NAME }}">
