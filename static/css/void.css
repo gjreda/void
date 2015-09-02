@@ -225,8 +225,12 @@ code, pre.ipynb {
 	border-radius: 4px;
 }
 
-/*.text_cell_render { color: #2E2E2E !important; } Override IPyNB style*/
+
+/* Override IPython Notebook Styles
+**************************************/
 div.output_stream pre {	font-size: 12px !important; }
+div.output_wrapper { position: static !important; }
+div.cell { margin: 0 !important; }
 
 
 /* Mobile
