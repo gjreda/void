@@ -154,21 +154,15 @@ hr.small {
 	clear: both;
 	margin-top: 0px !important;
 }
-
-h1.article-title {
-	line-height: normal;
-}
-
+h1.article-title { line-height: normal; }
 .article-date {
 	font-style: italic;
 	margin: 8px 0px 8px;
 }
-
 .article-tags {  }
 .article-summary { clear: both; }
 .article-content { clear: both; overflow: hidden; }
 .article-content img { border: 1px solid #222; }
-
 .article-content p {
 	margin: 12px 0px 12px 0px !important;
 	font-family: 'Open Sans', sans-serif;
@@ -179,23 +173,26 @@ h1.article-title {
 .article-content ol {
     font-size: 16px;
 }
-
-.article-sharing {
-	margin: 0 auto;
-}
-
 .caption { font-size: 12px !important; }
-
 blockquote {
 	padding: 0px 20px 0px 20px !important;
 	border-left: 2px solid #ddd !important;
 }
-
-.back-to-home {
-	margin-bottom: 10px;
-}
-
+.back-to-home { margin-bottom: 10px; }
 .center { text-align: center; }
+
+
+/* Article Sharing - Social links at bottom
+*********************************************/
+.article-sharing {
+	margin-top: 0 auto;
+	padding-bottom: 10px;
+}
+.article-sharing ul { margin: 0 0 0 0 !important; }
+.article-sharing ul li {
+	margin: 0 0 0 0 !important;
+	display: inline;
+}
 
 
 /* Mailchimp

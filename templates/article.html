@@ -59,13 +59,25 @@
     {{ article.content }}
   </div>
 
+  <hr class="small"></hr>
   <div class="article-sharing">
-    <hr class="small"></hr>
-    {% if TWITTER_NAME %}
-    <!-- Twitter Sharing
-    ================================================================== -->
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ TWITTER_NAME }}">Tweet</a>
-    {% endif %}
+      <ul>
+      {% if TWITTER_NAME %}
+      <!-- Twitter Sharing
+      ================================================================== -->
+      <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ TWITTER_NAME }}">Tweet</a></li>
+      {% endif %}
+
+      {% if FACEBOOK_SHARE %}
+      <!-- Facebook Sharing
+      ================================================================== -->
+      <li><div class="fb-share-button"
+          data-href="{{ SITEURL }}/{{ article.url }}"
+          data-layout="button_count">
+      </div></li>
+      {% endif %}
+      </ul>
+    </div>
 
     {% if MAILCHIMP %}
     {% include 'mailchimp.html' %}
