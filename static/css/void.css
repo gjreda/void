@@ -162,7 +162,7 @@ h1.article-title { line-height: normal; }
 .article-tags {  }
 .article-summary { clear: both; }
 .article-content { clear: both; overflow: hidden; }
-.article-content img { border: 1px solid #222; }
+/*.article-content img { border: 1px solid #222; }*/
 .article-content p {
 	margin: 12px 0px 12px 0px !important;
 	font-family: 'Open Sans', sans-serif;
