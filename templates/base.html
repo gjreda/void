@@ -24,16 +24,15 @@
   ================================================== -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Fonts 
+  <!-- Fonts
   ================================================== -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans|Merriweather|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
   <!-- CSS
   ================================================== -->
-  {% assets filters="cssmin", output="css/style.min.css", "css/base.css", "css/skeleton.css", "css/layout.css", "css/void.css", "css/pygment.css" %}
+  {% assets filters="cssmin", output="css/style.min.css", "css/font-awesome.min.css", "css/base.css", "css/skeleton.css", "css/layout.css", "css/void.css", "css/pygment.css" %}
   <link rel="stylesheet" href="/{{ ASSET_URL }}">
   {% endassets %}
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   {% if FEED_ALL_ATOM %}
   <!-- Feeds
@@ -106,7 +105,7 @@
 {% if TWITTER_NAME or TWITTER_CARDS %}
 <!-- twitter.js
 ==================================================================== -->
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>  
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 {% endif %}
 
 {% if FACEBOOK_SHARE %}
@@ -120,6 +119,12 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+{% endif %}
+
+{% if HACKER_NEWS_SHARE %}
+<!-- Hacker News Share
+==================================================================== -->
+<script type="text/javascript">var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
 {% endif %}
 
 {% if article %}
