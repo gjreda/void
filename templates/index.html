@@ -1,14 +1,56 @@
 {% extends 'base.html' %}
-{% block title %}{{ SITENAME }}{% endblock %}
-{% block metadesc %}{{ DESCRIPTION }}{% endblock %}
+{% block title %}Home | {{ SITENAME }}{% endblock %}
+{% block metadesc %}{% endblock %}
+
+{% block header %}
+<style>
+  img.round {
+    border: 2px solid #222;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+  }
+</style>
+{% endblock %}
 {% block content %}
+<img class="round" src="/images/headshot.jpg" alt="{{ SITENAME }}">
 
-  {% for article in articles %}
-    {% if article.status != 'draft' %}
-      <h2 class="article-title pull-left"><a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></h2>
-      <h5 class="article-date pull-right">{{ article.date|strftime('%b %d, %Y') }}</h5>
-      <hr class="large">
-    {% endif %}
-  {% endfor %}
+<h1 class="article-title">{{ ABOUT_PAGE_HEADER }}</h1>
+  <div class="article-content">
+    {% for page in pages %}
+        {% if page.title == 'About' %}
+            {{ page.content }}
+        {% endif %}
+    {% endfor %}
 
+    <hr class="small">
+
+<center>
+    <h2>Recent Articles</h2>
+    {% for article in articles[:5] %}
+      <p><a href={{ article.url }}>{{ article.title }}</a></p>
+      <ul><li>{{ article.date.strftime('%B %d, %Y') }}</li></ul>
+    {% endfor %}
+
+    <hr class="small">
+
+    {% for page in pages %}
+        {% if page.title == 'Press' %}
+            {{ page.content }}
+        {% endif %}
+    {% endfor %}
+
+    <hr class="small">
+
+    {% for page in pages %}
+        {% if page.title == 'Talks' %}
+            {{ page.content }}
+        {% endif %}
+    {% endfor %}
+  </div>
+</center>
+
+<hr class="large">
 {% endblock %}
