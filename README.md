@@ -1,15 +1,22 @@
 void
 ====
 
-void is a theme for Pelican. It's pretty much void of all color. 
-void uses an older version (1.2) of [Skeleton](http://www.getskeleton.com) 
+void is a theme for Pelican. It's pretty much void of all color.
+void uses an older version (1.2) of [Skeleton](http://www.getskeleton.com)
 and [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 
-Since I'm no designer, you should expect this to be a constant work in 
+Since I'm no designer, you should expect this to be a constant work in
 progress.
+
+You can see a live example of it [here](http://www.gregreda.com)
 
 Screenshots
 -----------
+### Index
+![Home Page](/examples/index.png)
+
+### Article
+![Article Page](/examples/article.png)
 
 Example pelicanconf.py
 ----------------------
@@ -17,20 +24,23 @@ Example pelicanconf.py
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR = u'Greg Reda'
-SITENAME = u'Greg Reda'
-EMAIL_ADDRESS = u'gjreda@gmail.com'
-SITEURL = 'http://www.gregreda.com'
+AUTHOR = u'Example Author Name'
+SITENAME = u'Example Void Theme'
+SITEURL = 'http://www.example.com'
 TIMEZONE = 'America/Chicago'
-THEME = '../pelican-themes/void'
-SUMMARY_MAX_LENGTH = 50
+THEME = 'void/'
 AVATAR = '/theme/images/avatar.jpg'
-TITLE = "Greg Reda: Data scientist in Chicago."
-DESCRIPTION = "Greg Reda is a Chicagoan focused on analyzing data to provide\
- insight and drive decisions. He loves stats, startups, sports, beer, and music."
+TITLE = "Example: What is the title of your site?"
+DESCRIPTION = "Lorem Ipsum something about your site and you too probably."
 
-ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}'
+ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+
+# Static Pages
+PAGE_PATHS = ['pages']
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
+ABOUT_PAGE_HEADER = 'Hello.'
 
 # DEFAULTS
 DEFAULT_LANG = 'en'
@@ -44,36 +54,35 @@ FEED_ALL_ATOM = "feeds/all.atom.xml"
 TAG_FEED_ATOM = "feeds/tag/%s.atom.xml"
 
 # PLUGINS
-PLUGIN_PATHS = ['../pelican-plugins',]
-PLUGINS = ['liquid_tags.notebook', 'pelican_dynamic', 'render_math']
+PLUGIN_PATHS = ['pelican-plugins', 'pelican_dynamic']
+PLUGINS = ['assets', 'liquid_tags.notebook', 'pelican_dynamic', 'render_math']
 
 CODE_DIR = 'code'
 NOTEBOOK_DIR = 'notebooks'
 EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')
 
-STATIC_PATHS = ['images', 'code', 'notebooks', 'extra']
+STATIC_PATHS = ['images', 'code', 'notebooks', 'extra', 'data']
 EXTRA_PATH_METADATA = {'extra/robots.txt': {'path': 'robots.txt'},}
 
-# Static Pages
+NAVIGATION = [
+    # You probably want to fill these in so they point to your user pages
+    {'site': 'twitter', 'user': '', 'url': 'https://twitter.com/...'},
+    {'site': 'github', 'user': '', 'url': 'https://github.com/...'},
+    {'site': 'linkedin', 'user': '', 'url': 'http://linkedin.com/in/...'},
+    {'site': 'google-plus', 'user': '', 'url': 'https://plus.google.com/...'},
+    {'site': 'spotify', 'user': '', 'url': 'https://open.spotify.com/user/...'},
+]
 
-# Social
-SOCIAL = {}
+TWITTER_NAME = ""
 TWITTER_CARDS = True
-TWITTER_NAME = "gjreda"
-GITHUB_NAME = 'gjreda'
-LINKEDIN_URL = 'http://linkedin.com/in/gjreda'
-GOOGLE_PLUS_URL = 'https://plus.google.com/111658599948853828157?rel=author'
-LASTFM_NAME = 'gjreda'
-# DISQUS_SITENAME = 'gregreda'
-# GITTIP_NAME = 'gjreda'
+FACEBOOK_SHARE = True
+HACKER_NEWS_SHARE = True
 
 #### Analytics
-GOOGLE_ANALYTICS = 'UA-34295039-1'
-GOOGLE_ADSENSE = False
-DOMAIN = "gregreda.com"
+GOOGLE_ANALYTICS = ''
+DOMAIN = "example.com"
 
 # Other
-MAILCHIMP = True
+MAILCHIMP = False
 CACHE_CONTENT = False
-AUTORELOAD_IGNORE_CACHE = True
 ```
