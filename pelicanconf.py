@@ -60,5 +60,4 @@ GOOGLE_ANALYTICS = ''
 DOMAIN = "example.com"
 
 # Other
-MAILCHIMP = False
 CACHE_CONTENT = False
