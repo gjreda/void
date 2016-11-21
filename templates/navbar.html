@@ -11,38 +11,13 @@
         </li>
       </ul>
       <ul id="social-icons">
+        {% for nav in NAVIGATION %}
         <li>
-          <a class="icon" href="https://twitter.com/{{ TWITTER_NAME }}" title="Twitter">
-            <i class="fa fa-fw fa-twitter"></i>
-          </a>
-          </li>
-        <li>
-          <a class="icon" href="https://github.com/{{ GITHUB_NAME }}" title="GitHub">
-            <i class="fa fa-fw fa-github"></i>
+          <a class="icon" href="{{ nav['url'] }}" title="{{ nav['site'].title() }}">
+            <i class="fa fa-fw fa-{{ nav['site'] }}"></i>
           </a>
         </li>
-        <li>
-          <a class="icon" href="{{ LINKEDIN_URL }}" title="LinkedIn">
-            <i class="fa fa-fw fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="{{ GOOGLE_PLUS_URL }}" title="Google+">
-            <i class="fa fa-fw fa-google-plus"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="https://last.fm/user/{{ LASTFM_NAME }}" title="LastFM">
-            <i class="fa fa-fw fa-music"></i>
-          </a>
-        </li>
-        {% if EMAIL_ADDRESS %}
-        <li>
-          <a class="icon" href="mailto:{{ EMAIL_ADDRESS }}?subject=Hi" title="E-Mail">
-            <i class="fa fa-fw fa-envelope"></i>
-          </a>
-        </li>
-        {% endif %}
+        {% endfor %}
         <li>
           <a class="icon" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" title="Subscribe (Atom)">
             <i class="fa fa-fw fa-rss"></i>
