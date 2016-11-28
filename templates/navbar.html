@@ -1,7 +1,7 @@
 <!-- Navigation
 ================================================== -->
 <nav class="navbar">
-  <div class="navbar-brand six columns"> <!-- Yes, I know this is a douchey class name -->
+  <div class="navbar-brand six columns">
       <ul>
         <li>
           <a href="/" title="Home"><img id="logo" src="/theme/images/avatar.jpg" alt="Me (Greg Reda, GrubHub-ified)"></a>
@@ -14,13 +14,13 @@
         {% for nav in NAVIGATION %}
         <li>
           <a class="icon" href="{{ nav['url'] }}" title="{{ nav['site'].title() }}">
-            <i class="fa fa-fw fa-{{ nav['site'] }}"></i>
+            <i class="fa fa-{{ nav['site'] }}"></i>
           </a>
         </li>
         {% endfor %}
         <li>
           <a class="icon" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" title="Subscribe (Atom)">
-            <i class="fa fa-fw fa-rss"></i>
+            <i class="fa fa-rss"></i>
           </a>
         </li>
       </ul> <!-- End social-icons ul -->

@@ -27,10 +27,11 @@
   <!-- Fonts
   ================================================== -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans|Merriweather|Source+Code+Pro' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
   <!-- CSS
   ================================================== -->
-  {% assets filters="cssmin", output="css/style.min.css", "css/font-awesome.min.css", "css/base.css", "css/skeleton.css", "css/layout.css", "css/void.css", "css/pygment.css" %}
+  {% assets filters="cssmin", output="css/style.min.css", "css/base.css", "css/skeleton.css", "css/layout.css", "css/void.css", "css/pygment.css" %}
   <link rel="stylesheet" href="/{{ ASSET_URL }}">
   {% endassets %}
 
