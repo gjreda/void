@@ -28,7 +28,7 @@
     <hr class="small">
 
 <center>
-    <h2>Recent Articles</h2>
+    <h2><a href="/blog/">Recent Articles</a></h2>
     {% for article in articles[:5] %}
       <p><a href={{ article.url }}>{{ article.title }}</a></p>
       <ul><li>{{ article.date.strftime('%B %d, %Y') }}</li></ul>
