@@ -9,14 +9,6 @@
   {% if EXTRA_HEADER %}
     {{ EXTRA_HEADER }}
   {% endif %}
-  <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:500px;}
-    /*
-      Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file.
-     */
-  </style>
 {% endblock %}
 
 {% block twittercards %}
@@ -35,7 +27,7 @@
   <meta name="twitter:site" content="@{{ TWITTER_NAME }}">
   <meta name="twitter:creator" content="@{{ TWITTER_NAME }}">
   <meta name="twitter:domain" content="{{ DOMAIN }}">
-  <meta name="twitter:image" content="{{ SITEURL }}{{ AVATAR }}">
+  <meta name="twitter:image" content="{{ SITEURL }}{{ LOGO_IMAGE }}">
   <meta name="twitter:title" content="{{ article.title }}">
   <meta name="twitter:description" content="{{ article.description|e }}">
 {% endblock %}
@@ -85,10 +77,6 @@
       </ul>
     </div>
 
-    {% if MAILCHIMP %}
-    {% include 'mailchimp.html' %}
-    {% endif %}
-
     <!-- Back to home
     ================================================================== -->
     <div class="back-to-home">
@@ -96,8 +84,4 @@
     </div>
     <hr class="small"></hr>
   </div>
-  <script>
-    // hide ipython notebook cell numbers
-  $('div.prompt').hide();
-  </script>
 {% endblock %}
