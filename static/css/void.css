@@ -208,15 +208,14 @@ blockquote {
 
 /* Code Formatting
 **************************************/
-code, pre.ipynb {
+/*code, pre.ipynb {
 	font-family: "Source Code Pro", monospace !important;
 	font-size: 13px !important;
-}
+}*/
 
 .highlight, pre {
 	font-family: "Source Code Pro", monospace !important;
 	font-size: 12px;
-	background-color: #272822;
 	line-height: 125%;
 	padding: 5px 10px 5px 10px;
 	border-radius: 4px;
@@ -228,7 +227,163 @@ code, pre.ipynb {
 div.output_stream pre {	font-size: 12px !important; }
 div.output_wrapper { position: static !important; }
 div.cell { margin: 0 !important; }
+div.prompt { display: none; }
 
+/* IPyNB strips out most of the .rendered_html CSS
+*	Adding it back here so things look right.
+*	https://github.com/danielfrg/pelican-ipynb/blob/master/core.py#L106
+**************************************/
+.rendered_html table {
+  margin-left: 0;
+  margin-right: 0;
+}
+.rendered_html img {
+  margin-left: 0;
+  margin-right: 0;
+}
+.rendered_html em {
+  font-style: italic;
+}
+.rendered_html strong {
+  font-weight: bold;
+}
+.rendered_html u {
+  text-decoration: underline;
+}
+.rendered_html h1 {
+  font-size: 185.7%;
+  margin: 1.08em 0 0 0;
+  font-weight: bold;
+  line-height: 1.0;
+}
+.rendered_html h2 {
+  font-size: 157.1%;
+  margin: 1.27em 0 0 0;
+  font-weight: bold;
+  line-height: 1.0;
+}
+.rendered_html h3 {
+  font-size: 128.6%;
+  margin: 1.55em 0 0 0;
+  font-weight: bold;
+  line-height: 1.0;
+}
+.rendered_html h4 {
+  font-size: 100%;
+  margin: 2em 0 0 0;
+  font-weight: bold;
+  line-height: 1.0;
+}
+.rendered_html h5 {
+  font-size: 100%;
+  margin: 2em 0 0 0;
+  font-weight: bold;
+  line-height: 1.0;
+  font-style: italic;
+}
+.rendered_html h6 {
+  font-size: 100%;
+  margin: 2em 0 0 0;
+  font-weight: bold;
+  line-height: 1.0;
+  font-style: italic;
+}
+.rendered_html ul {
+  list-style: disc;
+  margin: 0em 2em;
+  padding-left: 0px;
+}
+.rendered_html ul ul {
+  list-style: square;
+  margin: 0em 2em;
+}
+.rendered_html ul ul ul {
+  list-style: circle;
+  margin: 0em 2em;
+}
+.rendered_html ol {
+  list-style: decimal;
+  margin: 0em 2em;
+  padding-left: 0px;
+}
+.rendered_html ol ol {
+  list-style: upper-alpha;
+  margin: 0em 2em;
+}
+.rendered_html ol ol ol {
+  list-style: lower-alpha;
+  margin: 0em 2em;
+}
+.rendered_html ol ol ol ol {
+  list-style: lower-roman;
+  margin: 0em 2em;
+}
+.rendered_html ol ol ol ol ol {
+  list-style: decimal;
+  margin: 0em 2em;
+}
+.rendered_html hr {
+  color: black;
+  background-color: black;
+}
+.rendered_html pre {
+  margin: 1em 2em;
+}
+.rendered_html code {
+  border: 0;
+  background-color: #fff;
+  color: #000;
+  font-size: 100%;
+  padding: 0px;
+}
+.rendered_html blockquote {
+  margin: 1em 2em;
+}
+.rendered_html table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.rendered_html tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 1em 2em;
+}
+.rendered_html td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 1em 2em;
+}
+.rendered_html th {
+  text-align: left;
+  vertical-align: middle;
+  padding: 4px;
+}
+.rendered_html th {
+  font-weight: bold;
+}
+.rendered_html p {
+  text-align: left;
+}
+.rendered_html img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rendered_html svg {
+  max-width: 100%;
+  height: auto;
+}
+.rendered_html svg.unconfined {
+  max-width: none;
+}
+.rendered_html {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.rendered_html table,.rendered_html tr,.rendered_html th,.rendered_html td{border:1px solid black;border-collapse:collapse;margin:1em 2em;}
+.rendered_html td,.rendered_html th{text-align:left;vertical-align:middle;padding:4px;}
 
 /* Mobile
 **************************************/

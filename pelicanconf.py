@@ -6,9 +6,11 @@ SITENAME = u'Example Void Theme'
 SITEURL = 'http://www.example.com'
 TIMEZONE = 'America/Chicago'
 THEME = 'void/'
-AVATAR = '/theme/images/avatar.jpg'
 TITLE = "Example: What is the title of your site?"
 DESCRIPTION = "Lorem Ipsum something about your site and you too probably."
+
+LOGO_IMAGE = '/theme/images/avatar.jpg'
+FAVICON_IMAGE = '/theme/images/favicon.ico'
 
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
