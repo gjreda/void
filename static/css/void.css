@@ -230,7 +230,9 @@ div.cell { margin: 0 !important; }
 div.prompt { display: none; }
 
 /* IPyNB strips out most of the .rendered_html CSS
-Adding it back here so things look right. */
+*	Adding it back here so things look right.
+*	https://github.com/danielfrg/pelican-ipynb/blob/master/core.py#L106
+**************************************/
 .rendered_html table {
   margin-left: 0;
   margin-right: 0;
