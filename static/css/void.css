@@ -171,7 +171,10 @@ h1.article-title { line-height: normal; }
 	font-size: 18px;
 }
 .article-content > ol, ul {
-	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	line-height: 1.4em;
+	font-size: 18px;
 }
 .article-content > ul {
    list-style-type: disc;
