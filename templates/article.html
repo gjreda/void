@@ -37,6 +37,7 @@
   <!-- Article Headers
   ================================================================== -->
   <h1 class="article-title"><a href="/{{ article.url }}" title="Permalink to {{ article.title }}">{{article.title}}</a></h1>
+  <!-- <h3>{{ article.category }}</h3> -->
   <h5 class="article-date">{{ article.date|strftime('%B %d, %Y') }}
     {% if article.tags %} | Tags: {% for tag in article.tags %}
         <a class="tag" href="/{{ tag.url }}" rel="tag" title="Posts tagged with {{ article.tag }}">{{ tag }}</a>
@@ -53,35 +54,32 @@
 
   <hr class="small"></hr>
   <div class="article-sharing">
-      <ul>
-      {% if TWITTER_NAME %}
-      <!-- Twitter Sharing
-      ================================================================== -->
-      <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ TWITTER_NAME }}">Tweet</a></li>
-      {% endif %}
+    <ul>
+    {% if TWITTER_NAME %}
+    <!-- Twitter Sharing
+    ================================================================== -->
+    <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ TWITTER_NAME }}">Tweet</a></li>
+    {% endif %}
 
-      {% if FACEBOOK_SHARE %}
-      <!-- Facebook Sharing
-      ================================================================== -->
-      <li><div class="fb-share-button"
-          data-href="{{ SITEURL }}/{{ article.url }}"
-          data-layout="button_count">
-      </div></li>
-      {% endif %}
+    {% if FACEBOOK_SHARE %}
+    <!-- Facebook Sharing
+    ================================================================== -->
+    <div class="fb-share-button" data-href="{{ SITEURL }}{{ article.url }}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+    {% endif %}
 
-      {% if HACKER_NEWS_SHARE %}
-      <!-- Hacker NewsSharing
-      ================================================================== -->
-      <li><a href="https://news.ycombinator.com/submit" class="hn-button" data-count="horizontal">Vote on Hacker News</a></li>
-      {% endif %}
-      </ul>
-    </div>
+    {% if HACKER_NEWS_SHARE %}
+    <!-- Hacker NewsSharing
+    ================================================================== -->
+    <li><a href="https://news.ycombinator.com/submit" class="hn-button" data-count="horizontal">Vote on Hacker News</a></li>
+    {% endif %}
+    </ul>
+  </div>
 
     <!-- Back to home
     ================================================================== -->
-    <div class="back-to-home">
+    <!-- <div class="back-to-home">
       <a href="/">← Back to Home</a>
-    </div>
+    </div> -->
     <hr class="small"></hr>
   </div>
 {% endblock %}
