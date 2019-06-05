@@ -21,7 +21,8 @@
   <div class="article-content">
     {% for page in pages %}
         {% if page.title == 'About' %}
-            {{ page.content }}
+            <!-- {{ page.content }} -->
+            {{ page.summary }}
         {% endif %}
     {% endfor %}
 
@@ -34,7 +35,7 @@
       <ul><li>{{ article.date.strftime('%B %d, %Y') }}</li></ul>
     {% endfor %}
 
-    <hr class="small">
+    <!-- <hr class="small">
 
     {% for page in pages %}
         {% if page.title == 'Press' %}
@@ -48,7 +49,7 @@
         {% if page.title == 'Talks' %}
             {{ page.content }}
         {% endif %}
-    {% endfor %}
+    {% endfor %} -->
   </div>
 </center>
 
