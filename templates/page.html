@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+{% block title %}{{ SITENAME }} | {{ page.title }}{% endblock %}
 {% block metadesc %}{{ page.description|e }}{% endblock %}
 
 {% block header %}
@@ -17,7 +17,7 @@
 
 {% block content %}
 
-  <h1 class="article-title"><a href="/{{ page.url }}" title="Permalink to {{ page.title }}">{{page.title}}</a></h1>
+  <!-- <h1 class="article-title"><a href="/{{ page.url }}" title="Permalink to {{ page.title }}">{{page.title}}</a></h1> -->
 
   <div class="article-content">
     {{ page.content }}

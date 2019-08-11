@@ -21,7 +21,6 @@
   <div class="article-content">
     {% for page in pages %}
         {% if page.title == 'About' %}
-            <!-- {{ page.content }} -->
             {{ page.summary }}
         {% endif %}
     {% endfor %}
@@ -29,27 +28,11 @@
     <hr class="small">
 
 <center>
-    <h2><a href="/blog/">Recent Articles</a></h2>
+    <h2><a href="/blog/">Recent Things</a></h2>
     {% for article in articles[:5] %}
       <p><a href={{ article.url }}>{{ article.title }}</a></p>
-      <ul><li>{{ article.date.strftime('%B %d, %Y') }}</li></ul>
+      <ul><li>{{ article.date.strftime('%B %Y') }}</li></ul>
     {% endfor %}
-
-    <!-- <hr class="small">
-
-    {% for page in pages %}
-        {% if page.title == 'Press' %}
-            {{ page.content }}
-        {% endif %}
-    {% endfor %}
-
-    <hr class="small">
-
-    {% for page in pages %}
-        {% if page.title == 'Talks' %}
-            {{ page.content }}
-        {% endif %}
-    {% endfor %} -->
   </div>
 </center>
 
