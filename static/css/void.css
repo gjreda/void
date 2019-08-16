@@ -121,21 +121,16 @@ please email me.
 
 /* Links
 **************************************/
-a, a:visited {
+a:link, a:visited {
 	text-decoration: none !important;
-	font-weight: bold;
+	border-bottom: 2px solid #57b4ff;
 }
 
-/* div.article-content > a, a:visited {
-	border-bottom: 3px solid #7ef1f9;
-} */
-
-a.icon, a:visited.icon, a:active.icon {
-	font-size: 17px;
-	color: #555;
-	font-weight: bold;
+a:hover, a:focus {
+	/* background: #dbefff; */
+	background: #edf7ff;
+	border-bottom: 2px solid #044d87;
 }
-a:hover.icon, a:focus.icon { color: #222; }
 
 
 /* Horizontal Rulers
@@ -170,8 +165,8 @@ h1.article-title { line-height: normal; }
 .article-content p {
 	margin: 20px 0px 20px 0px !important;
 	font-family: 'Open Sans';
-	font-weight: 400;
-	line-height: 1.5em;
+	font-weight: 500;
+	line-height: 1.5rem;
 	font-size: 18px;
 }
 .article-content sup {
@@ -181,7 +176,7 @@ h1.article-title { line-height: normal; }
 .article-content > ol, ul {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
-	line-height: 1.4em;
+	line-height: 1.4rem;
 	font-size: 18px;
 }
 .article-content > ul {
