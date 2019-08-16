@@ -123,13 +123,13 @@ please email me.
 **************************************/
 a:link, a:visited {
 	text-decoration: none !important;
-	border-bottom: 2px solid #57b4ff;
+	border-bottom: 2px solid #57b4ff;  /* primary */
 }
 
 a:hover, a:focus {
 	/* background: #dbefff; */
-	background: #edf7ff;
-	border-bottom: 2px solid #044d87;
+	background: #ebf5ff;  /* hue = 8% of primary */
+	border-bottom: 2px solid #234866; /* saturation = 40% of primary */
 }
 
 
