@@ -12,15 +12,15 @@ html, body {
 	color: #2E2E2E !important;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Merriweather", serif;
+	font-family: "Roboto Slab", "Merriweather", serif;
 	margin-top: 20px;
 }
-h1 { font-size: 28px; }
-h2 { font-size: 24px; }
-h3 { font-size: 20px; }
-h4 { font-size: 18px; }
-h5 { font-size: 16px; }
-h6 { font-size: 14px; }
+h1 { font-size: 30px; }
+h2 { font-size: 26px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 12px; }
 
 .container {
 	min-height: 100%;
@@ -114,7 +114,7 @@ please email me.
 .navbar-links a {
   text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
 	font-size: 1.1rem;
 	line-height: 2rem;
 }
@@ -143,7 +143,7 @@ hr.large {
 }
 
 hr.small {
-	margin: 5px 0px;
+	margin: 10px 0px;
 }
 
 
@@ -153,20 +153,32 @@ hr.small {
 	clear: both;
 	margin-top: 0px !important;
 }
-h1.article-title { line-height: normal; }
-.article-date {
-	font-style: italic;
-	margin: 8px 0px 8px;
+h1.article-title {
+	line-height: normal;
+	text-align: center;
+	margin-bottom: 25px;
 }
-.article-tags {  }
+h1.index-article-title {
+	line-height: normal;
+}
+.article-date {
+	margin: 0 0 0 0;
+	text-align: center;
+	margin-bottom: 5px
+}
+.article-tags {
+	margin: 0 0 0 0;
+	text-align: center;
+	margin-bottom: 5px;
+}
 .article-summary { clear: both; }
 .article-content { clear: both; overflow: hidden; }
 /*.article-content img { border: 1px solid #222; }*/
 .article-content p {
-	margin: 20px 0px 20px 0px !important;
-	font-family: 'Open Sans';
-	font-weight: 500;
-	line-height: 1.5rem;
+	margin: 10px 0px 20px 0px !important;
+	font-family: 'Lato';  /* Lato, Source Sans Pro */
+	font-weight: 400;
+	line-height: 1.8rem;
 	font-size: 18px;
 }
 .article-content sup {
@@ -174,7 +186,7 @@ h1.article-title { line-height: normal; }
 	font-size: x-small;
 }
 .article-content > ol, ul {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-weight: 400;
 	line-height: 1.4rem;
 	font-size: 18px;
@@ -227,17 +239,17 @@ blockquote {
 
 /* Code Formatting
 **************************************/
-/*code, pre.ipynb {
-	font-family: "Source Code Pro", monospace !important;
-	font-size: 13px !important;
-}*/
+code, pre.ipynb {
+	font-family: "Inconsolata", monospace !important;
+}
 
-.highlight, pre {
-	font-family: "Source Code Pro", monospace !important;
-	font-size: 12px;
-	line-height: 125%;
-	padding: 5px 10px 5px 10px;
-	border-radius: 4px;
+.highlight {
+	font-family: "Inconsolata", monospace !important;
+	font-size: 15px;
+	line-height: 130%;
+	margin: 0 15px 0 15px;
+	/* border-radius: 4px; */
+	overflow: auto;
 }
 
 
